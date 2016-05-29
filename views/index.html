@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--char set (lang above)-->
+  <meta charset="utf-8">
+
+  <!--device/browser shizzle-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--meta content-->
+  <link rel="shortcut icon" href="favicon.ico" />
+  
+  <meta name="author" content="Ruth John (@rumyra) & Tim Pietrusky (@timpietrusky)">
+  <meta name="dcterms.rightsHolder" content="Ruth John & Tim Pietrusky 2016">
+  <title>Live JS</title>
+
+  <link rel="stylesheet" href="reveal/css/reveal.css">
+  <link rel="stylesheet" href="reveal/css/theme/blood.css" id="theme">
+  <link rel="stylesheet" href="reveal/lib/css/zenburn.css" id="theme">
+  <script src="reveal/js/reveal.js"></script>
+
+  <link href="public/css/extraTalk.css" rel="stylesheet" type="text/css">
+
+  <style type="text/css">
+  #apiList p {display: inline-block; margin:20px;}
+  </style>
+  
+</head>
+<body class="talk">
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <section>
+          <h1>Live JS</h1>
+          <h3>Ruth John & Tim Pietrusky</h3>
+        </section>
+        <section>
+          <h2>Ruth [@Rumyra]</h2>
+          <h2 class="fragment fade-in">Tim [@TimPietrusky]</h2>
+          <aside class="notes">
+            <p>Hi my names Ruth</p>
+            <p>And my name is Tim and we're going to talk about/do some Live JS</p>
+          </aside>
+        </section>
+        <!-- RUTH -->
+        <section data-background="images/ohyes.gif">
+          <h2 style="color:white;">Javascript</h2>
+          <aside class="notes">
+            <p>Javascript</p>
+            <p>It's totally awesome right?</p>
+            <p>I mean just today we've seen...</p>
+          </aside>
+        </section>
+        <section>
+          <h3>Javascript can do VR</h3>
+          <h3 class="fragment fade-in">Amazing future stuff</h3>
+          <h3 class="fragment fade-in">Offline</h3>
+          <h3 class="fragment fade-in">Hardware</h3>
+          <aside class="notes">
+            <p>Subject to change based on day - but an overview of what we saw during the day here</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Quick run down?</h2>
+          <aside class="notes">
+            <p>What can I say - shall we do a brief history of javascript?</p>
+            <p>Created in 10 days in May 1995 by Brendan Eich</p>
+            <p>Stuff happened</p>
+          </aside>
+        </section>
+
+        <section data-background="images/alllogos.png">
+          <aside class="notes">
+            <p>And now we're here</p>
+            <p>Seriously tho - it's been a hard journey for JS, what with the browser vendors and the actionscript and the ECMA v4, 3.1 5 and now 2015, 2016.</p>
+            <p>Javascript has suddenly grown up and it's got serious!</p>
+          </aside>
+        </section>
+
+        <section data-background="images/serious.gif">
+          <h2 style="color:white;">Serious programming</h2>
+          <aside class="notes">
+            <p>But this is the wonderful thing about this loosely type dark art that is JavaScript. It can be serious, but it can also be a lot of fun. There are so many amazing things we now have to play with</p>
+            <p>We know this because of all the places we see javascript now - the serious places like</p>
+          </aside>
+        </section>
+
+        <section data-background="images/aircraft.png">
+          <aside class="notes">
+            <p>Node servers on an aircraft - this is a company called Reaktor - they built an in flight experiences via an onboard node server for Finair</p>
+          </aside>
+        </section>
+
+        <section data-background="images/ebola.png">
+          <aside class="notes">
+            <p>The new offline capabilities of javascript meant it help fight ebola - this is a talk at the last JSConfEU last year. Really important clever stuff.</p>
+          </aside>
+        </section>
+
+        <section data-background="images/hack.png">
+          <aside class="notes">
+            <p>And of course, if we believe the telly - which we all do - javascript is used for serious hacking - as portayed in this usa programme 'white collar'.</p>
+            <p>And then there's the fun stuff...</p>
+          </aside>
+        </section>
+
+        <section data-background="images/lunar.png">
+          <aside class="notes">
+            <p>Art installations - like sebly's lunar trails. Hardware meets browser at it's best. An old arcade game recreated in the browser - which is not only a hardware installation but also you can play it in the browser on the website.</p>
+          </aside>
+        </section>
+
+        <section data-background="images/hardware.jpg">
+          <aside class="notes">
+            <p>And I haven't even begun on hardware. Tessles, esprinos, node running on raspberry pies, noecoptors - we saw BLE beacons earlier. Javascript is literally everywhere.</p>
+          </aside>
+        </section>
+
+        <section data-background="images/trex.png">
+          <h2>Dinosaurs</h2>
+          <p><a href="http://www.blackgangchine.com/">blackgangchine.com/</a></p>
+          <aside class="notes">
+            <p>Dinosaurs - one of my friends hacks big mechanical dinosaurs. Sounds crazy right.</p>
+            <p>We have this island of the south coast of England and there’s a park there, where the owner has just shipped in these huge dinosaurs. They all have mechanical skeletons which are control by raspberry pis. These in turn can be programmed with javascript. And so we were thinking of ways for these huge dinosaurs to be more crowd interactive. Having a motion or infrared sensor so they turn when they detect walking past…</p>
+          </aside>
+        </section>
+
+        <section data-background="images/smalldino.png">
+          <h2>Dinosaurs</h2>
+          <p><a href="http://www.blackgangchine.com/">blackgangchine.com/</a></p>
+          <aside class="notes">
+            <p>But what if the public could control the dinosaurs?</p>
+            <p>Hook up some cheap MIDI controllers and let the kids and big kids come and move the smaller dinos with them</p>
+          </aside>
+        </section>
+
+        <section data-background="images/ohyes.gif">
+          <h2 style="color:white;">Javascript</h2>
+          <aside class="notes">
+            <p>Javascript</p>
+            <p>And do you know what - I haven't even got started on music - cos that's really super awesome... There's...</p>
+          </aside>
+        </section>
+
+        <section data-background="images/novation.png">
+          <aside class="notes">
+            <p>All</p>
+          </aside>
+        </section>
+
+        <section data-background="images/roland808.png">
+          <aside class="notes">
+            <p>these</p>
+          </aside>
+        </section>
+
+        <section data-background="images/viktor.png">
+          <aside class="notes">
+            <p>synth</p>
+          </aside>
+        </section>
+
+        <section data-background="images/html909.png">
+          <aside class="notes">
+            <p>tha</p>
+          </aside>
+        </section>
+
+        <section data-background="images/mod.png">
+          <aside class="notes">
+            <p>sisers</p>
+            <p>They're all linked to at the end of these slides and I'll flurry link them after too - they're amazing - true engineering.</p>
+          </aside>
+        </section>
+
+        
+        <!-- MUSIC IS COOL!! -->
+
+
+        
+
+
+        <!-- THIS IS WHEN I WAS YOUNG - THIS INSPIRED ME THEN I MADE MY OWN SOFTWARE SECTION-->
+        <section>
+          <h2>Winamp</h2>
+          <img src="images/WinAmp.gif" style="display:block;margin:0px auto;" />
+          <audio controls  style="display:block;margin:0px auto;">
+            <source src="images/llama.mp3" type="audio/mp3" />
+          </audio>
+          <aside class="notes">
+            <p>If you don't know</p>
+            <p>Winamp was the mp3 player of choice
+            We're talking back when Napster was illegal</p>
+            <p>My favourtie thing - Visualizer</p>
+          </aside>
+        </section>
+
+        <section data-background="images/winampViz.jpg">
+          <aside class="notes">
+            <p>Winamp visualise inspired me</p>
+            <p>I used to go into clubs & venues with projector.</p>
+            <p>So I got to thinking - could I recreate my native VJ software in a browser</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Requirements</h2>
+          <p class="fragment roll-in">Moving visual: Web Animation API, HTML, CSS, Canvas, Web GL, video element...</p>
+          <p class="fragment roll-in">Analysed sound wave: Web Audio API</p>
+          <p class="fragment roll-in">Controller: Web MIDI API</p>
+          <aside class="notes">
+            <p>Requirements would be moving visual. We've got HTML, CSS, Canvas, WebGL - all these lovely things</p>
+            <p>A way to analyse the sound to move the visual - well we have the web audio API</p>
+            <p>And a way to control/mix these visuals - the web MIDI API</p>
+            <p>So let's start with a simple moving visual</p>
+          </aside>
+        </section>
+
+        <section data-state="show-vj"></section>
+
+        <section data-state="show-talk">
+          <h2>Web Animation API</h2>
+          <pre><code data-trim>element.animate([
+  {opacity: '1'},
+  {opacity: '0.4'}
+], {
+    duration: 200,
+    iterations: 1
+});</code></pre>
+          <aside class="notes">
+            <p>Explain code</p>
+            <p>Animation API - covers css transistions animations and svg. It comes with both the animatable keyframes part of css animations but also a timing layer. Much more control over event snad timelines - something css animations lacked.</p>
+          </aside>
+        </section>
+
+        <section data-state="show-vjtwo"></section>
+
+
+        <!--TIM I DON'T THINK I'LL NEED ANY OF THIS - JUST SHOW SOME VISUALS GOING IN TIME TO MUSIC-->
+        <!-- <section data-state="show-talk">
+          <h2>Web Audio API</h2>
+          <p>Concept of Nodes</p>
+          <p class="fragment roll-in">Input node</p>
+          <p class="fragment roll-in">Modification and anlyser nodes</p>
+          <p class="fragment roll-in">Output node - sound out (usually speakers)</p>
+          <aside class="notes">
+            <p>I'm sure we've all seen the API - but just to go over it - the concept is based around nodes all linked together, input output etc...</p>
+          </aside>
+        </section>
+
+        <section data-state="play-keyboard">
+          <h2>Web Audio API</h2>
+<pre><code data-trim>// input nodes
+// with oscillator
+var oscillator = audioAPI.createOscillator();
+
+// grab from audio or video element
+var mediaSource = audioAPI.createMediaElementSource(element);
+
+// take it from a stream source
+var streamSource = audioAPI.createMediaStreamSource(stream);
+
+// request file & load into buffer
+var bufferSource = audioAPI.createBufferSource();
+var request = new XMLHttpRequest();
+...
+          </code></pre>
+          <aside class="notes">
+
+          </aside>
+        </section>
+
+        <section>
+          <h2>Web Audio API</h2>
+          <pre><code data-trim contenteditable>// modification nodes
+// control volume
+audioAPI.createGain();
+
+// create filter
+audioAPI.createBiquadFilter();
+
+// output node
+soundFile.connect(audioAPI.destination);
+          </code></pre>
+
+          <aside class="notes">
+            <p>You can do simple things like control volume - or more comples like make sound filters or even make sound itself (you can aso load sound in)</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Analysing</h2>
+          <p>We can do that :D</p>
+          <pre><code data-trim contenteditable>// analyser node
+var analyser = audioAPI.createAnalyser();
+
+//get data
+analyser.getByteFrequencyData();
+analyser.getFloatFrequencyData();
+analyser.getByteTimeDomainData();
+          </code></pre>
+          <aside class="notes">
+            <p>I however want to analyse sound. So I create an analyser node - here you have access to both time and frequncy data - I want frequency.</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Match frequency to a light</h2>
+          <pre><code data-trim contenteditable>
+//get light elements
+var lights = document.getElementsByTagName('i');
+var totalLights = lights.length;
+
+for (var i=0; i&lt;totalLights; i){
+  var freqDataKey = i*8;
+  if (frequencyData[freqDataKey] > 160){
+    lights[i].style.opacity = "1";
+  } else {
+    lights[i].style.opacity = "0.2";
+  }
+}
+          </code></pre>
+          <aside class="notes">
+            <p>Here I just loop over the light elements and match frequency to a light - so when that frequency plays the light shines</p>
+            <p>But we need some sound - probably sound the DJ/band is playing</p>
+            <p>Enter another web API</p>
+          </aside>
+        </section> -->
+        
+        <section>
+          <h2>Media Stream API</h2>
+          <p>(getUserMedia)</p>
+          <pre><code>// pipe in analysing to getUserMedia
+  navigator.getUserMedia(
+    {audio:true},
+    gotStream,
+    function(err) {
+      console.log("The following error occured: " + err);
+    } 
+  );
+}, false );
+          </code></pre>
+          <aside class="notes">
+            <p>Picks up on devices camera and microphone</p>
+          </aside>
+        </section>
+
+        <section data-state="show-audiodetect"></section>
+
+        <section data-state="show-talk">
+          <h2>Need some control</h2>
+          <p>Web MIDI API</p>
+          <aside class="notes">
+            <p>Why MIDI - why not gamepad, keyboard, bluetooth.</p>
+            <p>Let me explain MIDI a little bit</p>
+          </aside>
+        </section>
+
+        <section data-background="images/icon.jpg">
+          <aside class="notes">
+            <p>So this is my midi controller of choice</p>
+            <p>The reason is because I like to take everything that you've jsut seen - but have two screens and mix them together</p>
+          </aside>
+        </section>
+
+        <section data-background="images/iconside.jpg">
+          <aside class="notes">
+            <p>One side controls one screen and one side is the other screen</p>
+            <p>We can use the buttons, sliders etc... to control what is shown on each screen - whether that be lights like you've seen or video/pictures/3d etc...</p>
+            <p>The screens them selves in the code are just divs - so you can put in them what ever you can think to code</p>
+          </aside>
+        </section>
+
+        <section data-background="images/iconcross.jpg">
+          <aside class="notes">
+            <p>Now this is the important part - this is the cross fader.</p>
+            <p>This doesn't just fade inbetween the two divs - this also picks up on the audio frequency and 'mixes' to the sound</p>
+            <p>The best way for me to show you is for me to demo - but you're not gonna see what I'm doing so you're going to have to cope with my comentary.</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>VJ Software Demo</h2>
+          <p><a href="http://github.com/Rumyra">Code is on github.com/Rumyra</a></p>
+          <aside class="notes">
+            <p>Run this from Canary Ruth</p>
+            <p>So great - I can infact recreate a piece of software I had around at uni - in a browser that I used to need quite a hefty old set up for. But what about more - I mean things have changed - tech has got a lot smaller and a lot more portable.</p>
+            <p>Well if you're anything like me you're going to take things a little further</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>So I could have stopped there...</h2>
+          <aside class="notes">
+            <p>So I could have stopped there - but I didn't. See things have changed since I was at uni - everything is a lot smaller now.</p>
+          </aside>
+        </section>
+
+        <section data-background="images/bag.jpg">
+          <aside class="notes">
+            <p>So I took a laptop bag</p>
+          </aside>
+        </section>
+
+        <section data-background="images/scissors.jpg">
+          <aside class="notes">
+            <p>scissors</p>
+          </aside>
+        </section>
+
+        <section data-background="images/mdf.jpg">
+          <aside class="notes">
+            <p>MDF and a strap</p>
+          </aside>
+        </section>
+
+        <section data-background="images/projector.jpg">
+          <aside class="notes">
+            <p>mini projector</p>
+          </aside>
+        </section>
+
+        <section data-background="images/laptop.jpg">
+          <aside class="notes">
+            <p>laptop</p>
+          </aside>
+        </section>
+
+        <section data-background="images/icon.jpg">
+          <aside class="notes">
+            <p>MIDI controller</p>
+          </aside>
+        </section>
+
+        <section data-background="images/sew.jpg">
+          <aside class="notes">
+            <p>Didi some sewing</p>
+          </aside>
+        </section>
+
+        <section data-background="images/strapped.jpg">
+          <aside class="notes">
+            <p>et voila - a portable VJ kit - </p>
+          </aside>
+        </section>
+
+        <section data-background="images/gear.jpg">
+          <aside class="notes">
+            <p>gaffa tape</p>
+          </aside>
+        </section>
+
+        <section data-background="images/me.jpg">
+          <h2>Take it to the streets!</h2>
+          <p><a style="color:white;" href="https://24ways.org/2015/bringing-your-code-to-the-streets">24ways.org/2015/bringing-your-code-to-the-streets</a></p>
+          <aside class="notes">
+            <p>You can build a portable VJ kit and carry around the streets of your city, with a laptop, projector and MIDI controller, mixing visuals via your browser.</p>
+            <p>I did this - this is me at christmas, walking around the streets of my city, projecting moving visuals to music - with an attached tray. Read all about it on 24ways.org</p>
+          </aside>
+        </section>
+
+
+        <!-- WHAT YOU MADE -->
+
+
+        <!-- LET US SHOW YOU -->
+
+
+
+
+
+        <section data-background="images/ohyes.gif">
+          <h2>Javascript is LIVE!</h2>
+          <p>@Rumyra | @TimPietrusky</p>
+          
+          <aside class="notes">
+            <p>We're so comfortable now with our whole dev stack being JS - but it's not just a software environment anymore.</p>
+            <p>Tim and I will be around for the next two days with all of our equipment VJing so come and say hello, come and play with our MIDI hardware - can I say that. It’s been an absolute pleasure I really hope I have inspired you today. Thank you.</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>References</h2>
+          <p><a href="https://backstage.spotlight.com/2015/01/08/javascript-tools-frameworks-and-libraries/">Javascript logo image</a></p>
+          <p><a href="https://reaktor.com/blog/aircraft-customer-experience-on-a-new-level/">Reaktor</a></p>
+          <p><a href="http://2015.jsconf.eu/speakers/patricia-garcia-good-tech-for-hard-places-fighting-ebola-with-javascript-offline-apps.html">Fighting Ebola with offline apps</a></p>
+          <p><a href="https://twitter.com/adamdawkins/status/670588991784230912">White Collar USA</a></p>
+          <p><a href="http://intro.novationmusic.com/harry-coade">Launchpad</a></p>
+          <p><a href="http://codepen.io/pixelass/full/adyLPR/">Roland 808</a></p>
+          <p><a href="https://nicroto.github.io/viktor/">Viktor NV-1</a></p>
+          <p><a href="http://html909.com/#/">HTML909</a></p>
+          <p><a href="http://mod-synth.io/">Mod Synth</a></p>
+          <p><a href="http://seb.ly/work/lunar-trails/">Seb.ly's Lunar Trails</a></p>
+          
+        </section>
+
+      </section>
+    </div></div>
+
+    <div id="vjing">
+      <!-- <button id="play-audio">play</button> -->
+      <!-- <audio id="simon" src="public/media/Guilt.mp3" loop></audio> -->
+      <section class="screen" id="screenOne"><i></i></section>
+      <section class="screen" id="screenTwo"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></section>
+    </div>
+
+<script src="reveal/plugin/notes/notes.js"></script>
+<script src="reveal/plugin/highlight/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!-- <script src="audioVisual.js"></script> -->
+<!-- <script src="demos.js"></script> -->
+
+<script type="text/javascript">
+
+// Reveal~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Reveal.initialize({
+
+  // Display controls in the bottom right corner
+  controls: true,
+
+  // Display a presentation progress bar
+  progress: false,
+
+  // Display the page number of the current slide
+  slideNumber: true,
+
+  // Push each slide change to the browser history
+  history: true,
+
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+
+  // Transition style
+  transition: 'fade', // none/fade/slide/convex/concave/zoom
+
+  // Transition speed
+  transitionSpeed: 'default', // default/fast/slow
+
+  // Transition style for full page slide backgrounds
+  backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+
+  // Number of slides away from the current that are visible
+  viewDistance: 2,
+
+  // Parallax background image
+  parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+  // Parallax background size
+  parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px"
+
+  // Amount to move parallax background (horizontal and vertical) on slide change
+  // Number, e.g. 100
+  parallaxBackgroundHorizontal: '',
+  parallaxBackgroundVertical: ''
+
+});
+
+var vjDiv = document.getElementById('vjing'),
+    vjScreenOne = document.getElementById('screenOne'),
+    vjScreenTwo = document.getElementById('screenTwo');
+
+Reveal.addEventListener( 'show-vj', function() {
+    vjDiv.style.display = 'block';
+  }, false );
+
+Reveal.addEventListener('show-talk', function() {
+    vjDiv.style.display = 'none';
+  }, false );
+
+Reveal.addEventListener( 'show-vjtwo', function() {
+    vjDiv.style.display = 'block';
+    vjScreenOne.style.display = 'none';
+    vjScreenTwo.style.display = 'flex';
+  }, false );
+
+Reveal.addEventListener( 'show-audiodetect', function() {
+    vjDiv.style.display = 'block';
+    // pipe in analysing to getUserMedia
+    navigator.getUserMedia(
+      {audio:true},
+      gotStream,
+      function(err) {
+        console.log("The following error occured: " + err);
+      } 
+    );
+  }, false );
+
+var audioContext = (window.AudioContext || window.webkitAudioContext);
+navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+
+var audioApi = new audioContext();
+
+// variables
+var audioBuffer,
+    analyserNode,
+    frequencyData = new Uint8Array(1024);
+
+// create an audio API analyser node and connect to source
+function createAnalyserNode(audioSource) {
+  analyserNode = audioApi.createAnalyser();
+  analyserNode.fftSize = 2048;
+  audioSource.connect(analyserNode);
+}
+
+// get's html elements, loops over them & attaches a frequency from analysed data - what you do is up to you!
+var allRepeatedEls = vjScreenTwo.getElementsByTagName('i'),
+  totalEls = allRepeatedEls.length;
+for (var i=0; i<totalEls; i++) {
+  var lightColour = i*10;
+  allRepeatedEls[i].style.backgroundColor = 'hsla('+lightColour+',  80%, 50%, 0.8)';
+  allRepeatedEls[i].style.borderColor = 'hsla('+lightColour+',  80%, 50%, 1)';
+}
+
+function animateStuff() {
+  requestAnimationFrame(animateStuff);
+  analyserNode.getByteFrequencyData(frequencyData);
+  for (var i=0; i<totalEls; i++) {
+    // flash on frequency
+    var freqDataKey = i*2;
+    if (frequencyData[freqDataKey] > 100){
+      // frequency played - make opache
+      allRepeatedEls[i].style.opacity = "1";
+    } else {
+      // frequency not played - fade out
+      allRepeatedEls[i].style.opacity = "0.2";
+    }
+  }
+}
+
+// getUserMedia success callback -> pipe audio stream into audio API
+function gotStream(stream) {
+    // Create an audio input from the stream.
+    var audioSource = audioApi.createMediaStreamSource(stream);
+    createAnalyserNode(audioSource);
+    animateStuff();
+}
+
+
+
+
+
+// var playButton = document.getElementById('play-audio'),
+//     simonSoundEl = document.getElementById('simon'),
+    
+//     guiltMp3 = audioAPI.createMediaElementSource(simonSoundEl),
+//     analyserNode = audioAPI.createAnalyser(),
+//     frequencyData = new Uint8Array(1024);
+// analyserNode.fftSize = 2048;
+
+// var playGuilt = function playGuilt() {
+//   guiltMp3.connect(analyserNode);
+//   guiltMp3.connect(audioAPI.destination);
+//   analyserNode.connect(audioAPI.destination);
+//   simonSoundEl.play();
+//   flashPads();
+// }
+// playButton.onclick = function() {
+//   if (simonSoundEl.paused) {
+//     playGuilt();
+//   } else {
+//     simonSoundEl.pause();
+//   }
+// }
+// var flashPads = function flashPads() {
+//   requestAnimationFrame(flashPads);
+//   //constantly getting feedback from data
+//   analyserNode.getByteFrequencyData(frequencyData);
+
+//   var padEls = vjDiv.getElementsByClassName('visual');
+//   var totalElements = padEls.length;
+
+//   for (var i=0; i<totalElements; i++) {
+//     //flash on frequency
+//     var freqDataKey = i*8;
+//     if (frequencyData[freqDataKey] > 140){
+//       //start animation on element
+//       padEls[i].style.opacity = "1";
+//     } else {
+//       padEls[i].style.opacity = "0.4";
+//     }
+//   }
+// }
+
+// function include(arr,obj) {
+//     return (arr.indexOf(obj) != -1);
+//   }
+
+
+</script>
+
+
+</body>
+</html>
