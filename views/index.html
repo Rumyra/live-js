@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="reveal/lib/css/zenburn.css" id="theme">
   <script src="reveal/js/reveal.js"></script>
 
-  <link href="public/css/extraTalk.css" rel="stylesheet" type="text/css">
+  <link href="css/extraTalk.css" rel="stylesheet" type="text/css">
 
   <style type="text/css">
   #apiList p {display: inline-block; margin:20px;}
@@ -118,24 +118,6 @@
           </aside>
         </section>
 
-        <section data-background="images/trex.png">
-          <h2>Dinosaurs</h2>
-          <p><a href="http://www.blackgangchine.com/">blackgangchine.com/</a></p>
-          <aside class="notes">
-            <p>Dinosaurs - one of my friends hacks big mechanical dinosaurs. Sounds crazy right.</p>
-            <p>We have this island of the south coast of England and there’s a park there, where the owner has just shipped in these huge dinosaurs. They all have mechanical skeletons which are control by raspberry pis. These in turn can be programmed with javascript. And so we were thinking of ways for these huge dinosaurs to be more crowd interactive. Having a motion or infrared sensor so they turn when they detect walking past…</p>
-          </aside>
-        </section>
-
-        <section data-background="images/smalldino.png">
-          <h2>Dinosaurs</h2>
-          <p><a href="http://www.blackgangchine.com/">blackgangchine.com/</a></p>
-          <aside class="notes">
-            <p>But what if the public could control the dinosaurs?</p>
-            <p>Hook up some cheap MIDI controllers and let the kids and big kids come and move the smaller dinos with them</p>
-          </aside>
-        </section>
-
         <section data-background="images/ohyes.gif">
           <h2 style="color:white;">Javascript</h2>
           <aside class="notes">
@@ -176,13 +158,13 @@
         </section>
 
         
-        <!-- MUSIC IS COOL!! -->
+        <!-- I WILL SAY 'ALL THESE SYTHESISERS' ADD THAT TO MIDI AND COOL TIM WILL SHOW YOU -->
 
 
         
 
 
-        <!-- THIS IS WHEN I WAS YOUNG - THIS INSPIRED ME THEN I MADE MY OWN SOFTWARE SECTION-->
+        <!-- So NOT ONLY DO YOU HAVE MUSIC BUT I DON'T KNOW IF U REMEMBER THIS -> VISUALS -->
         <section>
           <h2>Winamp</h2>
           <img src="images/WinAmp.gif" style="display:block;margin:0px auto;" />
@@ -205,147 +187,7 @@
           </aside>
         </section>
 
-        <section>
-          <h2>Requirements</h2>
-          <p class="fragment roll-in">Moving visual: Web Animation API, HTML, CSS, Canvas, Web GL, video element...</p>
-          <p class="fragment roll-in">Analysed sound wave: Web Audio API</p>
-          <p class="fragment roll-in">Controller: Web MIDI API</p>
-          <aside class="notes">
-            <p>Requirements would be moving visual. We've got HTML, CSS, Canvas, WebGL - all these lovely things</p>
-            <p>A way to analyse the sound to move the visual - well we have the web audio API</p>
-            <p>And a way to control/mix these visuals - the web MIDI API</p>
-            <p>So let's start with a simple moving visual</p>
-          </aside>
-        </section>
-
         <section data-state="show-vj"></section>
-
-        <section data-state="show-talk">
-          <h2>Web Animation API</h2>
-          <pre><code data-trim>element.animate([
-  {opacity: '1'},
-  {opacity: '0.4'}
-], {
-    duration: 200,
-    iterations: 1
-});</code></pre>
-          <aside class="notes">
-            <p>Explain code</p>
-            <p>Animation API - covers css transistions animations and svg. It comes with both the animatable keyframes part of css animations but also a timing layer. Much more control over event snad timelines - something css animations lacked.</p>
-          </aside>
-        </section>
-
-        <section data-state="show-vjtwo"></section>
-
-
-        <!--TIM I DON'T THINK I'LL NEED ANY OF THIS - JUST SHOW SOME VISUALS GOING IN TIME TO MUSIC-->
-        <!-- <section data-state="show-talk">
-          <h2>Web Audio API</h2>
-          <p>Concept of Nodes</p>
-          <p class="fragment roll-in">Input node</p>
-          <p class="fragment roll-in">Modification and anlyser nodes</p>
-          <p class="fragment roll-in">Output node - sound out (usually speakers)</p>
-          <aside class="notes">
-            <p>I'm sure we've all seen the API - but just to go over it - the concept is based around nodes all linked together, input output etc...</p>
-          </aside>
-        </section>
-
-        <section data-state="play-keyboard">
-          <h2>Web Audio API</h2>
-<pre><code data-trim>// input nodes
-// with oscillator
-var oscillator = audioAPI.createOscillator();
-
-// grab from audio or video element
-var mediaSource = audioAPI.createMediaElementSource(element);
-
-// take it from a stream source
-var streamSource = audioAPI.createMediaStreamSource(stream);
-
-// request file & load into buffer
-var bufferSource = audioAPI.createBufferSource();
-var request = new XMLHttpRequest();
-...
-          </code></pre>
-          <aside class="notes">
-
-          </aside>
-        </section>
-
-        <section>
-          <h2>Web Audio API</h2>
-          <pre><code data-trim contenteditable>// modification nodes
-// control volume
-audioAPI.createGain();
-
-// create filter
-audioAPI.createBiquadFilter();
-
-// output node
-soundFile.connect(audioAPI.destination);
-          </code></pre>
-
-          <aside class="notes">
-            <p>You can do simple things like control volume - or more comples like make sound filters or even make sound itself (you can aso load sound in)</p>
-          </aside>
-        </section>
-
-        <section>
-          <h2>Analysing</h2>
-          <p>We can do that :D</p>
-          <pre><code data-trim contenteditable>// analyser node
-var analyser = audioAPI.createAnalyser();
-
-//get data
-analyser.getByteFrequencyData();
-analyser.getFloatFrequencyData();
-analyser.getByteTimeDomainData();
-          </code></pre>
-          <aside class="notes">
-            <p>I however want to analyse sound. So I create an analyser node - here you have access to both time and frequncy data - I want frequency.</p>
-          </aside>
-        </section>
-
-        <section>
-          <h2>Match frequency to a light</h2>
-          <pre><code data-trim contenteditable>
-//get light elements
-var lights = document.getElementsByTagName('i');
-var totalLights = lights.length;
-
-for (var i=0; i&lt;totalLights; i){
-  var freqDataKey = i*8;
-  if (frequencyData[freqDataKey] > 160){
-    lights[i].style.opacity = "1";
-  } else {
-    lights[i].style.opacity = "0.2";
-  }
-}
-          </code></pre>
-          <aside class="notes">
-            <p>Here I just loop over the light elements and match frequency to a light - so when that frequency plays the light shines</p>
-            <p>But we need some sound - probably sound the DJ/band is playing</p>
-            <p>Enter another web API</p>
-          </aside>
-        </section> -->
-        
-        <section>
-          <h2>Media Stream API</h2>
-          <p>(getUserMedia)</p>
-          <pre><code>// pipe in analysing to getUserMedia
-  navigator.getUserMedia(
-    {audio:true},
-    gotStream,
-    function(err) {
-      console.log("The following error occured: " + err);
-    } 
-  );
-}, false );
-          </code></pre>
-          <aside class="notes">
-            <p>Picks up on devices camera and microphone</p>
-          </aside>
-        </section>
 
         <section data-state="show-audiodetect"></section>
 
@@ -357,6 +199,10 @@ for (var i=0; i&lt;totalLights; i){
             <p>Let me explain MIDI a little bit</p>
           </aside>
         </section>
+
+
+        <!-- ANALYSING AUDIO DEMO-->
+
 
         <section data-background="images/icon.jpg">
           <aside class="notes">
@@ -462,10 +308,10 @@ for (var i=0; i&lt;totalLights; i){
         </section>
 
 
-        <!-- WHAT YOU MADE -->
+        <!-- NERD DISCO -->
 
 
-        <!-- LET US SHOW YOU -->
+        <!-- AND THEN YOU HAVE LIVE JS -->
 
 
 
